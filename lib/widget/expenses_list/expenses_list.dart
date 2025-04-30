@@ -1,0 +1,24 @@
+import 'package:expense_tracker/models/expense.dart';
+import 'package:expense_tracker/widget/expenses_list/expense_item.dart';
+import 'package:flutter/material.dart';
+
+class ExpensesList extends StatelessWidget {
+  const ExpensesList({super.key, required this.expenses});
+  final List<Expense> expenses;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: expenses.length,
+      itemBuilder: (ctx, index) {
+        return ExpenseItem(
+          expense: expenses[index],
+          onDelete: (expense) {
+            // Handle delete action here
+            // For example, you can call a function to remove the expense from the list
+          },
+        );
+      },
+    );
+  }
+}
