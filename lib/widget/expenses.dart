@@ -1,5 +1,6 @@
 import 'package:expense_tracker/widget/expenses_list/expenses_list.dart';
 import 'package:expense_tracker/models/expense.dart';
+import 'package:expense_tracker/widget/new_expense.dart';
 import 'package:flutter/material.dart';
 
 class Expenses extends StatefulWidget {
@@ -42,30 +43,7 @@ class _ExpensesState extends State<Expenses> {
     ),
   ];
   void _openAddExpenseOverlay() {
-    showModalBottomSheet(
-      context: context,
-      builder:
-          (ctx) => SizedBox(
-            height: 300,
-            child: Column(
-              children: [
-                TextField(
-                  decoration: const InputDecoration(labelText: 'Title'),
-                ),
-                TextField(
-                  decoration: const InputDecoration(labelText: 'Amount'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    // Add logic to save the expense
-                    Navigator.of(ctx).pop();
-                  },
-                  child: const Text('Add Expense'),
-                ),
-              ],
-            ),
-          ),
-    );
+    showModalBottomSheet(context: context, builder: (ctx) => NewExpense());
   }
 
   @override

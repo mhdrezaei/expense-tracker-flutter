@@ -14,15 +14,26 @@ class ExpenseItem extends StatelessWidget {
         title: Row(
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: Icon(categoryIcons[expense.category]),
             ),
             Text(expense.title),
           ],
         ),
-        subtitle: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text('\$${expense.amount.toStringAsFixed(2)}'),
+        subtitle: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text('\$${expense.amount.toStringAsFixed(2)}'),
+            ),
+            Row(
+              spacing: 4,
+              children: [
+                Icon(Icons.calendar_today),
+                Text(expense.formattedDate),
+              ],
+            ),
+          ],
         ),
         trailing: IconButton(
           icon: const Icon(Icons.delete),
