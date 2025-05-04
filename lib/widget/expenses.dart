@@ -42,11 +42,17 @@ class _ExpensesState extends State<Expenses> {
       category: Category.work,
     ),
   ];
+  void _addExpense(Expense expense) {
+    setState(() {
+      _registeredExpenses.add(expense);
+    });
+  }
+
   void _openAddExpenseOverlay() {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      builder: (ctx) => NewExpense(),
+      builder: (ctx) => NewExpense(onAddExpense: _addExpense),
     );
   }
 
