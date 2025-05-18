@@ -1,3 +1,4 @@
+import 'package:expense_tracker/widget/chart/chart.dart';
 import 'package:expense_tracker/widget/expenses_list/expenses_list.dart';
 import 'package:expense_tracker/models/expense.dart';
 import 'package:expense_tracker/widget/new_expense.dart';
@@ -91,8 +92,8 @@ class _ExpensesState extends State<Expenses> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Expense Tracker'),
-        foregroundColor: Color.fromARGB(255, 238, 181, 157),
-        backgroundColor: Color.fromARGB(255, 63, 27, 1),
+        foregroundColor: Color.fromARGB(255, 222, 228, 247),
+        backgroundColor: Color.fromARGB(255, 91, 128, 250),
         actions: [
           IconButton(
             icon: const Icon(Icons.add),
@@ -103,7 +104,8 @@ class _ExpensesState extends State<Expenses> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text('The chart!'),
+          Chart(expenses: _registeredExpenses),
+          const SizedBox(height: 20),
           Expanded(child: mainContent),
           const SizedBox(height: 20),
         ],

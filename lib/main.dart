@@ -2,10 +2,11 @@ import 'package:expense_tracker/widget/expenses.dart';
 import 'package:flutter/material.dart';
 
 var kColorScheme = ColorScheme.fromSeed(
-  seedColor: const Color.fromARGB(255, 194, 114, 94),
+  seedColor: const Color.fromARGB(255, 133, 161, 255),
 );
 var kDarkColorScheme = ColorScheme.fromSeed(
   seedColor: const Color.fromARGB(255, 233, 50, 4),
+  brightness: Brightness.dark,
 );
 void main() {
   runApp(
@@ -16,7 +17,7 @@ void main() {
       ),
       theme: ThemeData().copyWith(
         useMaterial3: true,
-        scaffoldBackgroundColor: const Color.fromARGB(255, 63, 27, 1),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 147, 175, 236),
         colorScheme: kColorScheme,
         appBarTheme: AppBarTheme().copyWith(
           backgroundColor: kColorScheme.onPrimary,
@@ -29,6 +30,7 @@ void main() {
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: kColorScheme.primaryContainer,
+            foregroundColor: kColorScheme.onPrimaryContainer,
           ),
         ),
         textTheme: ThemeData().textTheme.copyWith(

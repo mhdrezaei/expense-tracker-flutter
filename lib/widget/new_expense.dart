@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:expense_tracker/models/expense.dart';
@@ -43,7 +44,7 @@ class _NewExpenseState extends State<NewExpense> {
       showDialog(
         context: context,
         builder:
-            (ctx) => AlertDialog(
+            (ctx) => CupertinoAlertDialog(
               title: const Text('Invalid input'),
               content: const Text('please enter valid data'),
               actions: [
@@ -79,11 +80,12 @@ class _NewExpenseState extends State<NewExpense> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 40),
       child: SizedBox(
-        height: 300,
+        height: double.infinity,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          spacing: 16,
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             TextField(
               controller: _titleController,
